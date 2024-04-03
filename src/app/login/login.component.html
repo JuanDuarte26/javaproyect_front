@@ -1,0 +1,45 @@
+<div class="space">
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+</div>
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
+
+<div *ngIf="currentForm === 1" class="login">
+
+  <form [formGroup]="form">
+      <h3>Login Here</h3>
+
+      <label class="form-label" for="username">Email</label>
+      <input formControlName="email" type="email" id="email" class="form-control">
+
+      <label class="form-label" for="password">Password</label>
+      <input formControlName="password" type="password" id="password" class="form-control">
+
+      <button type="button" (click)="loginUser()">Log In</button>
+      <p class="text">Don't have an account? 
+      <a class="register1"(click)="toggleForm(2)" >Register</a> </p>
+  </form>
+</div>
+
+<div *ngIf="currentForm === 2" class="register">
+  <form [formGroup]="form" class="form2">
+    <a class="btn"(click)="toggleForm(2)" ></a>
+      <h3>Register</h3>
+
+      <label class="form-label" for="username">Name</label>
+      <input formControlName="name" type="text" id="name" class="form-control">
+
+      <label class="form-label" for="username">Email</label>
+      <input formControlName="email" type="email" id="email" class="form-control">
+
+      <label class="form-label" for="password">Password</label>
+      <input formControlName="password" type="password" id="password" class="form-control">
+
+      <button class="boton2"  type="button" (click)="registrarUsuario()" >Sign up</button>
+  </form>
+</div>
